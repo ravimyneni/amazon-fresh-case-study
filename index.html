@@ -84,8 +84,10 @@ table.wide{min-width:720px}
 .persona-card .chips li{margin:0;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px}
 #competitive .legend{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;max-width:none;font-size:14px;color:var(--muted)}
 #competitive .legend b{color:var(--ink)}
-#competitive .scroll-hint{display:none;font-size:13px;color:var(--muted);max-width:none}
-#competitive .table-scroll{max-width:100%;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);-webkit-overflow-scrolling:touch}
+#competitive .scroll-hint{font-size:13px;color:var(--muted);max-width:none}
+#competitive .table-scroll{max-width:100%;max-height:min(560px,75vh);overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--accent) var(--line)}
+#competitive table.wide thead th{position:sticky;top:0;z-index:2;background:#FAFAFB;box-shadow:0 1px 0 var(--line)}
+#competitive table.wide thead th:first-child{left:0;z-index:3}
 #competitive table.wide{min-width:860px;border:0;border-radius:0;overflow:visible;border-collapse:separate;border-spacing:0;font-size:14px}
 #competitive table.wide th,
 #competitive table.wide td{vertical-align:top}
@@ -123,7 +125,7 @@ table.wide{min-width:720px}
 <nav class="cs-nav"><div class="wrap">
   <a class="back" href="https://ravimyneni.github.io/">← All work</a>
   <div class="links">
-    <a href="#role">My Role</a><a href="#design">Design Process</a><a href="#problem">Problem</a><a href="#stakeholders">Stakeholders</a><a href="#users">End Users</a><a href="#research">Research</a><a href="#competitive">Competitive</a><a href="#personas">Personas</a><a href="#decisions">Decisions</a><a href="#prototype">Prototype</a><a href="#uikit">UI Kit</a><a href="#final">Final Design</a><a href="#outcome">Outcome</a><a href="#metrics">Metrics</a>
+    <a href="#role">My Role</a><a href="#design">Design Process</a><a href="#problem">Problem</a><a href="#stakeholders">Stakeholders</a><a href="#users">End Users</a><a href="#research">Research</a><a href="#competitive">Competitive</a><a href="#personas">Personas</a><a href="#decisions">Decisions</a><a href="#prototype">Prototype</a><a href="#final">Final Design</a><a href="#outcome">Outcome</a><a href="#metrics">Metrics</a>
   </div>
 </div></nav>
 
@@ -145,7 +147,7 @@ table.wide{min-width:720px}
 
 <main id="main">
 <section class="cs-section" id="role"><div class="wrap">
-  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>I was the designer on Shop by Recipe during my time at Amazon. The work ran from the research and design through to launch in the Amazon Food app, where the feature shipped and is in use.</p></div></div>
+  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>I was the UX designer on Shop by Recipe at Amazon, responsible for the research, the end-to-end journey, the information architecture, all seven screens, and the clickable prototype, through to launch in the Amazon Food app, where the feature shipped and is in use.</p></div></div>
   <div class="body">
     <h3>A grocery store that starts with dinner</h3>
     <p>People shopping for groceries online in India wanted one place for three things: curated recipes, the ingredients those recipes need, and same-day delivery. That is the problem I designed for. Most grocery apps are organised the way a supermarket is: aisles, categories, brands. That works when you already have a list. It works less well when the real question is <em>"what is for dinner tonight?"</em>, because then the shopper has to choose a dish somewhere else, write down the ingredients, and search for each one.</p>
@@ -313,7 +315,7 @@ table.wide{min-width:720px}
       <li><b>Partial</b> — a limited version, or split across two products</li>
       <li><b>No</b> — not part of the product</li>
     </ul>
-    <p class="scroll-hint">On a small screen, scroll the table sideways. The name column stays put.</p>
+    <p class="scroll-hint">Scroll the table sideways and down. The header row and the name column stay put.</p>
     <div class="table-scroll">
     <table class="wide">
       <thead>
@@ -836,62 +838,8 @@ table.wide{min-width:720px}
   </div>
 </div></section>
 
-<section class="cs-section" id="uikit"><div class="wrap">
-  <div class="head"><div class="num">11</div><div><h2>UI Kit</h2><p>The project's own visual language, shown as a specimen. These colors are sampled from the exported screens.</p></div></div>
-  <div class="body">
-    <p>Shop by Recipe sits in the Amazon Food shell, so the kit is that shell plus the pieces added for recipes: the yellow Shop items action, the occasion shelves, the Veg Only toggle, and the ingredient checklist. Hex values below are sampled from the Figma exports on this page. They describe this design, not a separate brand sheet.</p>
-    <div class="swatches">
-      <div class="swatch"><i style="background:#87D8E2"></i><span>#87D8E2<br>Header, left</span></div>
-      <div class="swatch"><i style="background:#A3E6D1"></i><span>#A3E6D1<br>Header, right</span></div>
-      <div class="swatch"><i style="background:#70D0D0"></i><span>#70D0D0<br>Deliver-to bar</span></div>
-      <div class="swatch"><i style="background:#55913C"></i><span>#55913C<br>fresh wordmark</span></div>
-      <div class="swatch"><i style="background:#FED813"></i><span>#FED813<br>Shop items / Buy</span></div>
-      <div class="swatch"><i style="background:#A13115"></i><span>#A13115<br>Price</span></div>
-      <div class="swatch"><i style="background:#F8A010"></i><span>#F8A010<br>Rating star</span></div>
-      <div class="swatch"><i style="background:#317F89"></i><span>#317F89<br>Text link</span></div>
-      <div class="swatch"><i style="background:#0F1111"></i><span>#0F1111<br>Ink</span></div>
-      <div class="swatch"><i style="background:#FFFFFF"></i><span>#FFFFFF<br>Surface</span></div>
-    </div>
-    <div class="card">
-      <h3>Type roles on the screens</h3>
-      <p>The product is set in Amazon's mobile UI type. The roles below use this page's font so the scale is readable here. Sizes are the roles as they read on the 375-wide screens.</p>
-      <p style="font:700 28px/1.2 'Inter Tight',Inter,sans-serif;color:#0F1111;margin-top:16px">Quick Cooking</p>
-      <p style="font-size:13px">Shelf title · about 22–28px · bold · ink</p>
-      <p style="font:600 18px/1.3 Inter,sans-serif;color:#0F1111;margin-top:14px">Veg Hakka Noodles</p>
-      <p style="font-size:13px">Recipe name · about 16–18px · semibold</p>
-      <p style="font-size:14px;margin-top:14px;color:#0F1111">Kunal Singh, Chef · 20 Mins · 48,784 reviews</p>
-      <p style="font-size:13px">Supporting line and time badge · about 12–14px</p>
-      <p style="margin-top:14px"><span style="display:inline-block;background:#FED813;color:#0F1111;font-weight:700;font-size:15px;padding:10px 18px;border-radius:8px">Shop items</span></p>
-      <p style="font-size:13px">Primary action · yellow #FED813 · dark label</p>
-      <p style="font:700 22px/1.2 Inter,sans-serif;color:#A13115;margin-top:14px">₹52.00</p>
-      <p style="font-size:13px">Price · #A13115</p>
-      <p style="margin-top:14px;color:#317F89;font-size:15px">Continue shopping on Amazon Fresh</p>
-      <p style="font-size:13px">Text link on the cart</p>
-    </div>
-    <h3>Components</h3>
-    <div class="grid g2">
-      <figure class="figure">
-        <div class="frame" style="max-height:300px"><img src="03-shop-by-recipe-home.webp" alt="Recipe cards with chef, rating, time badge, veg marker, and a yellow Shop items button. Veg Only sits next to Filters."></div>
-        <figcaption>Recipe card and Veg Only. Photo, chef, rating, time badge, diet marker, and Shop items. The toggle sits beside Filters, not inside them.</figcaption>
-      </figure>
-      <figure class="figure">
-        <div class="frame" style="max-height:300px"><img src="07-shop-items.webp" alt="Amazon Food cart with a yellow Buy Amazon Fresh Items button, a price, and a line item."></div>
-        <figcaption>Cart. Subtotal, the yellow Buy button, the text link, then a real product with price, stock, quantity, and Delete.</figcaption>
-      </figure>
-      <figure class="figure">
-        <div class="frame" style="max-height:300px"><img src="06-recipe-page.webp" alt="Recipe page header with category, rating, dish photo, and the chef."></div>
-        <figcaption>Recipe header. Category, rating, carousel, share and wishlist, time badge, then the chef.</figcaption>
-      </figure>
-      <figure class="figure">
-        <div class="frame" style="max-height:300px"><img src="02-how-it-works.webp" alt="How it works explainer with illustrated steps."></div>
-        <figcaption>Explainer. One line and an illustration per step, ending on the meal rather than a feature list. The ingredient checklist on the recipe page uses a green tick for items in the basket and a yellow plus for items left out.</figcaption>
-      </figure>
-    </div>
-  </div>
-</div></section>
-
 <section class="cs-section dark" id="final"><div class="wrap">
-  <div class="head"><div class="num">12</div><div><h2>Final Design</h2><p>Seven high-fidelity screens. Click a screen to open it in the prototype. Scroll inside a phone to see the full capture.</p></div></div>
+  <div class="head"><div class="num">11</div><div><h2>Final Design</h2><p>Seven high-fidelity screens. Click a screen to open it in the prototype. Scroll inside a phone to see the full capture.</p></div></div>
   <div class="body">
     <div class="grid g2" id="gallery">
       <figure class="figure"><div class="frame"><a href="walkthrough.html#landing"><img src="01-fresh-landing.webp" width="375" height="1111" alt="Amazon Food landing"></a></div><figcaption>01 · Amazon Food landing</figcaption></figure>
@@ -908,7 +856,7 @@ table.wide{min-width:720px}
 </div></section>
 
 <section class="cs-section" id="outcome"><div class="wrap">
-  <div class="head"><div class="num">13</div><div><h2>Outcome</h2><p>What shipped, what I took away, and what I would do next.</p></div></div>
+  <div class="head"><div class="num">12</div><div><h2>Outcome</h2><p>What shipped, what I took away, and what I would do next.</p></div></div>
   <div class="body">
     <h3>What shipped</h3>
     <div class="grid g2">
@@ -943,7 +891,7 @@ table.wide{min-width:720px}
 </div></section>
 
 <section class="cs-section" id="metrics"><div class="wrap">
-  <div class="head"><div class="num">14</div><div><h2>Metrics</h2><p>Results after launch in the Amazon Food app, and what the survey measured.</p></div></div>
+  <div class="head"><div class="num">13</div><div><h2>Metrics</h2><p>Results after launch in the Amazon Food app, and what the survey measured.</p></div></div>
   <div class="body">
     <h3>Results</h3>
     <div class="grid g4">
