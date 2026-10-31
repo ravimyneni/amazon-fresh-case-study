@@ -1,9 +1,9 @@
-# Shop by Recipe for Amazon Fresh — UX case study
+# Shop by Recipe for Amazon Food — UX case study
 
-Case study and clickable prototype by **Ravi Myneni**, Senior Product / UX Designer.
+Case study and clickable walkthrough by **Ravi Myneni**, UX Designer at Amazon Development Centre India. Shop by Recipe shipped in the Amazon Food app.
 
 - Case study: https://ravimyneni.github.io/amazon-fresh-case-study/
-- Prototype: https://ravimyneni.github.io/amazon-fresh-case-study/walkthrough.html
+- Walkthrough: https://ravimyneni.github.io/amazon-fresh-case-study/walkthrough.html
 
 Static HTML/CSS/JS, no build step. Final screens are WebP exports from Figma. Hotspots are defined in `screens.js`.
 

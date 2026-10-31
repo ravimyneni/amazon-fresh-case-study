@@ -7,8 +7,8 @@
 <link rel="icon" href="favicon-32.png?v=rm1" type="image/png" sizes="32x32">
 <link rel="icon" href="favicon-16.png?v=rm1" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=rm1" sizes="180x180">
-<title>Shop by Recipe prototype · Amazon Fresh · Ravi Myneni</title>
-<meta name="description" content="Clickable prototype of the Amazon Fresh Shop by Recipe concept, designed by Ravi Myneni.">
+<title>Shop by Recipe walkthrough · Amazon Food · Ravi Myneni</title>
+<meta name="description" content="Clickable walkthrough of Shop by Recipe in the Amazon Food app, designed by Ravi Myneni.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -52,7 +52,7 @@ kbd{font:600 11px Inter,sans-serif;border:1px solid var(--line);border-bottom-wi
 </head>
 <body>
 <header>
-  <a href="./">← Case study</a><span class="crumb">Amazon Fresh · Shop by Recipe · clickable prototype by Ravi Myneni</span>
+  <a href="./">← Case study</a><h1 class="crumb" style="font:inherit;margin:0">Amazon Food · Shop by Recipe · clickable walkthrough by Ravi Myneni</h1>
   <span class="sp"></span>
   <button class="btn" id="back" disabled aria-label="Back">← Back</button>
   <button class="btn" id="toggle" aria-pressed="false">Show hotspots (H)</button>
@@ -90,13 +90,13 @@ function render(id){
   canvas.style.height=s.h+'px';
   s.hotspots.forEach(h=>{const a=document.createElement('a');a.className='hs';a.href='#'+(h.to[0]=='@'?id:h.to);a.title=h.label;a.setAttribute('aria-label',h.label);
     Object.assign(a.style,{left:h.x+'px',top:h.y+'px',width:h.w+'px',height:h.h+'px'});
-    a.onclick=e=>{e.preventDefault();e.stopPropagation();if(h.to=='@toast'){say('Checkout is outside the scope of this concept prototype.');return}go(h.to,true)};canvas.appendChild(a)});
+    a.onclick=e=>{e.preventDefault();e.stopPropagation();if(h.to=='@toast'){say('Checkout is outside the scope of this walkthrough.');return}go(h.to,true)};canvas.appendChild(a)});
   screen.scrollTop=0;
   const i=S.indexOf(s);
   cap.innerHTML=`<b>${i+1} / ${S.length} · ${s.name}</b><br>${s.note} <span style="opacity:.7">(${s.hotspots.length} hotspots)</span>`;
   document.querySelectorAll('.list button').forEach(b=>b.classList.toggle('active',b.dataset.id==id));
   back.disabled=!hist.length;
-  document.title=s.name+' · Shop by Recipe prototype';
+  document.title=s.name+' · Shop by Recipe walkthrough';
 }
 function go(id,push){if(!byId[id])return;if(push&&cur&&cur!==id)hist.push(cur);history.replaceState(null,'','#'+id);render(id)}
 function goBack(){if(!hist.length)return;const p=hist.pop();history.replaceState(null,'','#'+p);render(p)}
