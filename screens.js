@@ -1,11 +1,11 @@
 window.SCREENS=[
  {
   "id": "landing",
-  "name": "Amazon Fresh landing",
+  "name": "Amazon Food landing",
   "file": "01-fresh-landing.webp",
   "h": 1111,
   "node": "1:415",
-  "note": "Entry point: the Shop by Recipe banner sits inside the familiar Fresh storefront.",
+  "note": "Entry point: the Shop by Recipe banner sits inside the familiar Amazon Food storefront.",
   "hotspots": [
    {
     "x": 0,
@@ -29,7 +29,7 @@ window.SCREENS=[
     "w": 95,
     "h": 40,
     "to": "landing",
-    "label": "Amazon logo \u2192 Fresh landing"
+    "label": "Amazon logo \u2192 Amazon Food landing"
    },
    {
     "x": 240,
@@ -127,7 +127,7 @@ window.SCREENS=[
     "w": 95,
     "h": 40,
     "to": "landing",
-    "label": "Amazon logo \u2192 Fresh landing"
+    "label": "Amazon logo \u2192 Amazon Food landing"
    },
    {
     "x": 240,
@@ -161,7 +161,7 @@ window.SCREENS=[
     "w": 78,
     "h": 44,
     "to": "landing",
-    "label": "fresh tab \u2192 Fresh landing"
+    "label": "fresh tab \u2192 Amazon Food landing"
    },
    {
     "x": 55,
@@ -169,7 +169,7 @@ window.SCREENS=[
     "w": 95,
     "h": 40,
     "to": "landing",
-    "label": "Amazon logo \u2192 Fresh landing"
+    "label": "Amazon logo \u2192 Amazon Food landing"
    },
    {
     "x": 240,
@@ -443,7 +443,7 @@ window.SCREENS=[
     "w": 95,
     "h": 38,
     "to": "landing",
-    "label": "Amazon logo \u2192 Fresh landing"
+    "label": "Amazon logo \u2192 Amazon Food landing"
    },
    {
     "x": 320,
@@ -589,7 +589,7 @@ window.SCREENS=[
     "w": 95,
     "h": 38,
     "to": "landing",
-    "label": "Amazon logo \u2192 Fresh landing"
+    "label": "Amazon logo \u2192 Amazon Food landing"
    },
    {
     "x": 320,
@@ -751,7 +751,7 @@ window.SCREENS=[
     "w": 78,
     "h": 44,
     "to": "landing",
-    "label": "fresh tab \u2192 Fresh landing"
+    "label": "fresh tab \u2192 Amazon Food landing"
    },
    {
     "x": 55,
@@ -759,7 +759,7 @@ window.SCREENS=[
     "w": 95,
     "h": 40,
     "to": "landing",
-    "label": "Amazon logo \u2192 Fresh landing"
+    "label": "Amazon logo \u2192 Amazon Food landing"
    },
    {
     "x": 240,
@@ -785,7 +785,7 @@ window.SCREENS=[
   "file": "07-shop-items.webp",
   "h": 1441,
   "node": "1:1163",
-  "note": "The recipe ingredients land in the Fresh cart as real products with quantity and delete controls.",
+  "note": "The recipe ingredients land in the Amazon Food cart as real products with quantity and delete controls.",
   "hotspots": [
    {
     "x": 17,
@@ -793,7 +793,7 @@ window.SCREENS=[
     "w": 336,
     "h": 50,
     "to": "@toast",
-    "label": "Buy Amazon Fresh Items (checkout is outside this prototype)"
+    "label": "Buy Amazon Fresh Items (checkout is outside this walkthrough)"
    },
    {
     "x": 14,
@@ -801,7 +801,7 @@ window.SCREENS=[
     "w": 348,
     "h": 46,
     "to": "landing",
-    "label": "Continue shopping on Amazon Fresh \u2192 Fresh landing"
+    "label": "Continue shopping on Amazon Fresh \u2192 Amazon Food landing"
    },
    {
     "x": 55,
@@ -809,7 +809,7 @@ window.SCREENS=[
     "w": 95,
     "h": 40,
     "to": "landing",
-    "label": "Amazon logo \u2192 Fresh landing"
+    "label": "Amazon logo \u2192 Amazon Food landing"
    }
   ]
  }
