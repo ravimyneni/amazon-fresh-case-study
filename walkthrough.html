@@ -47,7 +47,8 @@ kbd{font:600 11px Inter,sans-serif;border:1px solid var(--line);border-bottom-wi
 .toast{position:absolute;left:50%;bottom:40px;transform:translate(-50%,20px);background:rgba(20,32,28,.92);color:#fff;font-size:13px;padding:10px 14px;border-radius:12px;width:300px;text-align:center;opacity:0;transition:.25s;pointer-events:none;z-index:5}
 .toast.in{opacity:1;transform:translate(-50%,0)}
 .ctrl{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-@media (max-width:860px){main{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--line);max-height:none}.list{grid-auto-flow:column;grid-auto-columns:200px;overflow-x:auto}.keys{display:none}}
+header a{display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:860px){header{flex-wrap:wrap;gap:8px 12px;padding:10px 16px}header .crumb{flex:1 1 100%;order:3}.btn{min-height:44px}main{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--line);max-height:none}.list{grid-auto-flow:column;grid-auto-columns:200px;overflow-x:auto}.keys{display:none}}
 </style>
 </head>
 <body>
