@@ -83,7 +83,8 @@ table.wide{min-width:720px}
 .persona-card li+li{margin-top:6px}
 .persona-card .chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
 .persona-card .chips li{margin:0;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px}
-#competitive .legend{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;max-width:none;font-size:14px;color:var(--muted)}
+#competitive .legend{display:flex;flex-direction:column;align-items:stretch;flex-wrap:nowrap;gap:10px;list-style:none;padding:0;margin:0;max-width:100%;font-size:14px;color:var(--muted)}
+#competitive .legend li{display:grid;grid-template-columns:5.25rem minmax(0,1fr);column-gap:12px;align-items:start;line-height:1.45;min-width:0}
 #competitive .legend b{color:var(--ink)}
 #competitive .scroll-hint{font-size:13px;color:var(--muted);max-width:none}
 #competitive .table-scroll{max-width:100%;max-height:min(560px,75vh);overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--accent) var(--line)}
@@ -120,6 +121,32 @@ table.wide{min-width:720px}
   #competitive table.wide td:first-child{min-width:136px}
   #competitive th.mark,#competitive td.mark{min-width:96px}
 }
+/* Paragraphs stay justified at every width. Nav labels and metric figures are not paragraphs. */
+body#top p{text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty}
+.card p+p{margin-top:10px}
+#role .owned{display:grid;gap:16px;grid-template-columns:repeat(6,minmax(0,1fr))}
+#role .owned>.card:nth-child(-n+3){grid-column:span 2}
+#role .owned>.card:nth-child(n+4){grid-column:span 3}
+#design .process{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+#design .process .step{padding:16px 22px;min-width:0}
+#design .process .step b{white-space:nowrap}
+.stat-row .card h3{font:800 clamp(28px,3.2vw,40px)/1 var(--font-head);color:var(--accent);margin-bottom:10px}
+@media (min-width:901px){
+  #design .process{width:calc(100% + 144px);margin-left:-144px}
+}
+@media (max-width:820px){
+  #design .process{display:flex;flex-wrap:wrap;width:100%;margin-left:0}
+  #design .process .step{flex:1 1 190px;min-width:min(100%,190px)}
+}
+@media (max-width:900px){
+  #role .owned{grid-template-columns:1fr 1fr}
+  #role .owned>.card,#role .owned>.card:nth-child(-n+3),#role .owned>.card:nth-child(n+4){grid-column:auto}
+  #role .owned>.card:last-child{grid-column:1 / -1}
+}
+@media (max-width:560px){
+  #role .owned{grid-template-columns:1fr}
+  #role .owned>.card:last-child{grid-column:auto}
+}
 </style>
 </head>
 <body id="top">
@@ -140,7 +167,7 @@ table.wide{min-width:720px}
     <div><dt>Role</dt><dd>UX Designer</dd></div>
     <div><dt>Timeline</dt><dd>10 months</dd></div>
     <div><dt>Team</dt><dd>Product and Engineering Partners</dd></div>
-    <div><dt>Platform</dt><dd>Amazon Food app, mobile</dd></div>
+    <div><dt>Platform</dt><dd>Amazon Food app, Android</dd></div>
     <div><dt>Tools</dt><dd>Figma</dd></div>
     <div><dt>Scope</dt><dd>Research, design and launch</dd></div>
   </dl>
@@ -156,16 +183,15 @@ table.wide{min-width:720px}
     <p>Shop by Recipe puts that whole loop inside Amazon Food. Customers browse recipes from well-known chefs, pick how many people they are cooking for, leave out anything already in the kitchen, and send the rest to the cart in one tap. The recipes are curated for the range of food people actually cook in India, so trying something new does not mean leaving the store to figure out the shopping.</p>
     <p>This page is the research and the design together: the competitor review, the survey, the personas, the flow, the information architecture, the wireframes, and then the screens. Every final screen is also linked in the <a href="walkthrough.html">clickable prototype</a>.</p>
     <h3>What I owned</h3>
-    <div class="grid g3">
+    <div class="grid owned">
       <div class="card"><h3>Problem framing</h3><p>Framing the problem from the research: a survey of 48 people, a look at other grocery apps, and four personas.</p></div>
-      <div class="card"><h3>End-to-end journey</h3><p>The end-to-end journey, from the Amazon Food storefront to the cart, including the user flow and information architecture.</p></div>
-      <div class="card"><h3>Information architecture</h3><p>Information architecture for recipe discovery: shelves, search, filters and the Veg Only toggle.</p></div>
-      <div class="card"><h3>Seven screens</h3><p>Interaction and visual design for all seven screens, built on Amazon's existing mobile patterns, from sketches through wireframes to Figma.</p></div>
+      <div class="card"><h3>End-to-end journey</h3><p>The end-to-end journey, from the Amazon Food storefront to the cart, including the user flow.</p></div>
+      <div class="card"><h3>Seven screens</h3><p>Interaction and visual design for all seven screens, built on Amazon's existing Android patterns, from sketches through wireframes to Figma.</p></div>
       <div class="card"><h3>First-run explainer</h3><p>The first-run explainer that shows new visitors how the feature works.</p></div>
       <div class="card"><h3>Clickable prototype</h3><p>A high-fidelity, clickable prototype in Figma so the whole idea could be reviewed and demoed end to end, not just described.</p></div>
     </div>
     <p>I worked alongside product and engineering partners, and I used the prototype as the shared reference for walking through the flow and talking through trade-offs.</p>
-    <p>Status: shipped in the Amazon Food app. Deliverables: research, flows, 7 mobile screens, a clickable prototype for review, and collaboration with developers through launch.</p>
+    <p>Status: shipped in the Amazon Food app. Deliverables: research, flows, 7 Android screens, a clickable prototype for review, and collaboration with developers through launch.</p>
   </div>
 </div></section>
 
@@ -175,7 +201,7 @@ table.wide{min-width:720px}
     <div class="step"><b>Discover</b><span>Surveyed 48 people who cook and buy groceries, and compared grocery apps on recipe shopping and delivery speed.</span></div>
     <div class="step"><b>Define</b><span>Framed the gap between a dish and a cart, then wrote four personas: Ankit, Sakshi, Harsh, and Meera.</span></div>
     <div class="step"><b>Ideate</b><span>Set the goals, mapped the user flow, and drew the information architecture: two ways in, one recipe page, then the cart.</span></div>
-    <div class="step"><b>Prototype</b><span>Sketches, a wireframe-tool pass, then seven high-fidelity screens in Figma on Amazon's mobile patterns.</span></div>
+    <div class="step"><b>Prototype</b><span>Sketches, a wireframe-tool pass, then seven high-fidelity screens in Figma on Amazon's Android patterns.</span></div>
     <div class="step"><b>Test &amp; Deliver</b><span>A clickable prototype for product and engineering review, then close work with developers to integrate the feature and streamline checkout for launch.</span></div>
   </div></div>
 </div></section>
@@ -220,7 +246,7 @@ table.wide{min-width:720px}
         <tr>
           <td>Engineering partners</td>
           <td>A feature that fits the Amazon Food shell that already exists: search, filters, and the cart.</td>
-          <td>The same review prototype. The screens reuse Amazon's mobile patterns so Shop by Recipe would feel like Amazon Food, not a second app.</td>
+          <td>The same review prototype. The screens reuse Amazon's Android patterns so Shop by Recipe would feel like Amazon Food, not a second app.</td>
         </tr>
         <tr>
           <td>Amazon Food</td>
@@ -283,7 +309,7 @@ table.wide{min-width:720px}
       <li>How often they lack ingredients for a particular recipe.</li>
       <li>How likely they are to use a feature that covers those gaps and delivers the same day.</li>
     </ul>
-    <div class="grid g2">
+    <div class="grid g4 stat-row">
       <div class="card"><h3>95.8%</h3><p>preferred shopping for recipe ingredients with 2-hour delivery.</p></div>
       <div class="card"><h3>73%</h3><p>want more Quick Cooking meal options.</p></div>
       <div class="card"><h3>67%</h3><p>find offline shopping time-consuming.</p></div>
@@ -310,7 +336,7 @@ table.wide{min-width:720px}
 <section class="cs-section" id="competitive"><div class="wrap">
   <div class="head"><div class="num">07</div><div><h2>Competitive Analysis</h2><p>Who already sold recipes, and who could deliver them.</p></div></div>
   <div class="body">
-    <p>I compared grocery apps on two things that mattered for this feature: whether you could shop from a recipe, and how fast the groceries arrived. BigBasket, DMart Ready, and Grofers were the first set. BigBasket's bb cookbook was the only recipe feature among them, and it still fell short of a 2-hour trip from a dish to a basket. Amazon Food could offer that delivery.</p>
+    <p>I compared grocery apps on two things that mattered for this feature: whether you could shop from a recipe, and how fast the groceries arrived. BigBasket, DMart Ready, and Grofers were the first set. BigBasket's BB Cookbook was the only recipe feature among them, and it still fell short of a 2-hour trip from a dish to a basket. Amazon Food could offer that delivery.</p>
     <p>The survey is what made the delivery gap decisive. 95.8% of participants preferred shopping for recipe ingredients with 2-hour delivery. The table sets those grocery apps next to other recipe-to-cart services that were live in India and globally while this was designed.</p>
     <ul class="legend">
       <li><b>Yes</b> — the capability was part of the product</li>
@@ -425,28 +451,28 @@ table.wide{min-width:720px}
     </div>
     <div class="callout">The opening for Amazon Food is the loop none of these quite closed: a recipe chosen for how people cook in India, scaled to the people eating, with anything already at home left out, landing in a cart that can arrive in about two hours.</div>
 
-    <h3>BigBasket's bb cookbook</h3>
+    <h3>BigBasket's BB Cookbook</h3>
     <p>BigBasket was the proof that recipe shopping already existed, and also the proof that it was not enough. The cookbook has a homepage of collections, search, a recipe page with a serving control and a Shop ingredients button, and a catalog menu. What it did not give you was Amazon Food's about-2-hour cart. Click any screenshot to open the full capture.</p>
     <div class="film">
       <figure class="figure">
-        <a href="bb-cookbook-homepage.webp"><img src="bb-cookbook-homepage.webp" width="219" height="1681" alt="BigBasket bb cookbook homepage, with a monsoon collection and a list of recipes."></a>
-        <figcaption>bb cookbook homepage. Collections such as Monsoon Delights, then a list of recipes.</figcaption>
+        <a href="bb-cookbook-homepage.webp"><img src="bb-cookbook-homepage.webp" width="219" height="1681" alt="BigBasket BB Cookbook homepage, with a monsoon collection and a list of recipes."></a>
+        <figcaption>BB Cookbook homepage. Collections such as Monsoon Delights, then a list of recipes.</figcaption>
       </figure>
       <figure class="figure">
-        <a href="bb-cookbook-search.webp"><img src="bb-cookbook-search.webp" width="230" height="1861" alt="BigBasket bb cookbook search results, a vertical list of recipes."></a>
-        <figcaption>bb cookbook search. A results list of recipes.</figcaption>
+        <a href="bb-cookbook-search.webp"><img src="bb-cookbook-search.webp" width="230" height="1861" alt="BigBasket BB Cookbook search results, a vertical list of recipes."></a>
+        <figcaption>BB Cookbook search. A results list of recipes.</figcaption>
       </figure>
       <figure class="figure">
         <a href="bb-cookbook-recipe.webp"><img src="bb-cookbook-recipe.webp" width="220" height="1090" alt="BigBasket recipe page for a dish, with serving size, ingredients, a Shop ingredients button, and cooking steps."></a>
-        <figcaption>bb cookbook recipe page. Serving size, ingredients, Shop ingredients, and the steps.</figcaption>
+        <figcaption>BB Cookbook recipe page. Serving size, ingredients, Shop ingredients, and the steps.</figcaption>
       </figure>
       <figure class="figure">
         <a href="bb-cookbook-serving.webp"><img src="bb-cookbook-serving.webp" width="230" height="1495" alt="BigBasket recipe page focused on the serving option and adding ingredients to the basket."></a>
-        <figcaption>bb cookbook serving option. The serving control, and ingredients you can add to the basket.</figcaption>
+        <figcaption>BB Cookbook serving option. The serving control, and ingredients you can add to the basket.</figcaption>
       </figure>
       <figure class="figure">
         <a href="bb-cookbook-catalogue.webp"><img src="bb-cookbook-catalogue.webp" width="280" height="430" alt="BigBasket catalog menu listing Courses, Indian Flavors, World Flavors, Kids and Nutrition, and Bakery Zone."></a>
-        <figcaption>bb cookbook catalog. Courses, Indian Flavors, World Flavors, Kids &amp; Nutrition, Bakery Zone.</figcaption>
+        <figcaption>BB Cookbook catalog. Courses, Indian Flavors, World Flavors, Kids &amp; Nutrition, Bakery Zone.</figcaption>
       </figure>
     </div>
 
@@ -827,7 +853,7 @@ table.wide{min-width:720px}
       <li>Shop items, with Buy Amazon Fresh Items, continue shopping, quantity, price, stock, and delete.</li>
     </ul>
     <figure class="figure">
-      <a href="research-wireframes.webp"><img src="research-wireframes.webp" width="1100" height="1071" alt="Six mobile wireframes: homepage, Shop by Recipe landing, recipe page top, recipe page with directions and reviews, search results, and the shop items cart."></a>
+      <a href="research-wireframes.webp"><img src="research-wireframes.webp" width="1100" height="1071" alt="Six wireframe screens: homepage, Shop by Recipe landing, recipe page top, recipe page with directions and reviews, search results, and the shop items cart."></a>
       <figcaption>Wireframes from the wireframe-tool pass. Click to open them larger. The high-fidelity screens are the Figma iteration of this set.</figcaption>
     </figure>
 
@@ -887,8 +913,6 @@ table.wide{min-width:720px}
       <div class="card"><h3>Voice assistant for the steps</h3><p>Step-by-step directions you can hear, including on a HomePod, Google Home, or Echo, so the phone does not have to sit on the counter while you cook.</p></div>
       <div class="card"><h3>Recipe collections</h3><p>Let people save recipes into their own groups, such as healthy recipes, kids' recipes, or desserts, and come back to them without searching again.</p></div>
     </div>
-    <p>The first row is the next round of design work on the flow that exists. The second row is the later scope: a random picker, voice directions, and collections.</p>
-    <p>Case study and design by <b>Ravi Myneni</b>, UX Designer. The screens are from the Figma design for Shop by Recipe in the Amazon Food app, along with the research, personas, user flow, information architecture, and wireframes.</p>
   </div>
 </div></section>
 
@@ -906,15 +930,14 @@ table.wide{min-width:720px}
       <div class="metric"><div class="v">90%</div><div class="l">Positive user feedback, praising the feature for saving time and adding convenience</div><div class="n">Result</div></div>
     </div>
     <h3>What the survey measured</h3>
-    <div class="grid g4">
+    <div class="grid g2 survey-count">
       <div class="metric"><div class="v">48</div><div class="l">People surveyed, aged 18 to 55</div><div class="n">Research</div></div>
+    </div>
+    <div class="grid g4 stat-metrics">
       <div class="metric"><div class="v">95.8%</div><div class="l">Preferred shopping for recipe ingredients with 2-hour delivery</div><div class="n">Research</div></div>
       <div class="metric"><div class="v">73%</div><div class="l">Want more Quick Cooking meal options</div><div class="n">Research</div></div>
       <div class="metric"><div class="v">67%</div><div class="l">Find offline shopping time-consuming</div><div class="n">Research</div></div>
-    </div>
-    <div class="grid g2">
       <div class="metric"><div class="v">58.3%</div><div class="l">Find it difficult to choose recipes online</div><div class="n">Research</div></div>
-      <div class="metric"><div class="v">60 / 50</div><div class="l">Healthy Meals and Veg Meals, from the survey</div><div class="n">Research</div></div>
     </div>
   </div>
 </div></section>
